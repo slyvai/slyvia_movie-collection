@@ -2,7 +2,6 @@ import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import Swal from 'sweetalert2';
-import Banner from '../assets/avengers-infinity-war-banner-4k-4c-1920x1080.jpg';
 
 function Home() {
   const [movies, setMovies] = useState([]);
@@ -83,8 +82,6 @@ function Home() {
   return (
     <>
       <div className="container-title">
-        <div className="banner">
-          <img src={Banner} alt="" />
           <div className="overlay">
             <h1>Movie</h1>
             <div className="search-bar">
@@ -98,19 +95,8 @@ function Home() {
               />
               <button onClick={handleSearchButtonClick}>Search</button>
             </div>
-            <h2>Avengers: Endgame (2019).</h2>
-            <p>
-              After the devastating events of Avengers: Infinity War (2018), the universe
-              is in ruins. With the help of remaining allies, the Avengers assemble
-              once more in order to reverse Thanos' actions and restore balance to the
-              universe.
-            </p>
-            
-            <button>Continue Watch</button>
-            <div class="arrow" onClick={scrollToResults}></div>
           </div>
         </div>
-      </div>
 
       <div className="movie-container" ref={resultsRef}>
         {isSearching && movies.map((movie) => (
